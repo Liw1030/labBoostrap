@@ -7,6 +7,7 @@
     <title>🍄Pendientes🍄</title>
     <link rel="stylesheet" href="./CSS/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -14,67 +15,99 @@
     <nav id="navbar"></nav>
 
     <!-- Texto presentando mi app -->
-
-    <div class="textHome text-center">
-        <p>La idea de mi programa es que pongas una lista de cursos pendientes que tienes. !Ojo👀¡ solo elimina el curso cuando lo acabes</p>
+    <div class="textHome text-center mt-5 fs-5">
+        <p>La idea de mi programa es que pongas una lista de cursos pendientes que tienes. <br> ¡Ojo👀! Solo elimina el
+            curso
+            cuando lo acabes.</p>
     </div>
 
-    <!-- seccion de los intems / tareaso cursos pendientes -->
-
+    <!-- Sección de los items / tareas o cursos pendientes -->
     <section class="container py-5" id="listTask">
 
-        <div class="row g-4">
+        <div class="row g-4 mb-3">
             <div class="col-md">
-                <div class="card shadow-sm text-center">
-                    <div class="card-body d-flex justify-content-between align-items-start">
-                        <div class="divText">
-                        <h5 class="card-title">Colgar la ropa</h5>
-                        <p class="card-text">Debo colgar la ropa a las 2 pm</p>
+                <div class="card shadow-sm text-center border border-dark">
+                    <div class="card-body d-flex justify-content-between">
+                        <div class="d-flex align-items-start gap-3">
+                            <img src="./Public/IA.jpg" alt="imageIA" style="height: 70px; width: 70px;" class="rounded">
+                            <div class="text-start">
+                                <h5 class="card-title mb-2">Introducción a la IA generativa</h5>
+                                <p class="card-text mb-0">Realizar el curso en: <a href="https://lnkd.in/dbptUwhJ">Curso
+                                        IA</a></p>
+                            </div>
                         </div>
-                        <button class="btn btn-danger">Eliminar</button>
-                    </div>
-                </div>
-            </div>
-        </div>    
-
-        <div class="row g-4">
-            <div class="col-md">
-                <div class="card shadow-sm text-center">
-                    <div class="card-body  d-flex justify-content-between align-items-start">
-                        <div class="divText">
-                        <h5 class="card-title">Revisar Canvas</h5>
-                        <p class="card-text">Revisar pendientes en canvas</p>
+                        <div class="d-flex flex-column justify-content-center">
+                            <button class="btn btn-danger" id="delete">Eliminar</button>
                         </div>
-                        <button class="btn btn-danger">Eliminar</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row g-4">
+        <div class="row g-4 mb-3">
             <div class="col-md">
-                <div class="card shadow-sm text-center">
-                    <div class="card-body d-flex justify-content-between align-items-start">
-                        <div class="divText">
-                        <h5 class="card-title">Hacer el almuerzo</h5>
-                        <p class="card-text">Debo cocinar a las 12</p>
+                <div class="card shadow-sm text-center border border-dark">
+                    <div class="card-body d-flex justify-content-between">
+                        <div class="d-flex align-items-start gap-3">
+                            <img src="./Public/py.png" alt="imagePy" style="height: 70px; width: 70px;" class="rounded">
+                            <div class="text-start">
+                                <h5 class="card-title mb-2">Terminar Ruta Python</h5>
+                                <p class="card-text mb-0">Ruta: <a href="https://platzi.com/home/">Platzi</a></p>
+                            </div>
                         </div>
-                        <button class="btn btn-danger">Eliminar</button>
+                        <div class="d-flex flex-column justify-content-center">
+                            <button class="btn btn-danger" id="delete">Eliminar</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
+        <div class="row g-4 mb-3">
+            <div class="col-md">
+                <div class="card shadow-sm text-center border border-dark">
+                    <div class="card-body d-flex justify-content-between">
+                        <div class="d-flex align-items-start gap-3">
+                            <img src="./Public/js.png" alt="imageJs" style="height: 70px; width: 70px;" class="rounded">
+                            <div class="text-start">
+                                <h5 class="card-title mb-2">Terminar Ruta Js</h5>
+                                <p class="card-text mb-0">Ruta: <a href="https://platzi.com/home/">Platzi</a></p>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                            <button class="btn btn-danger" id="delete">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
-    <!-- Seccion para agregar elemento  -->
-
-    <section class="container py-5" id="addNewItem">
+    <!-- Sección para agregar elemento -->
+    <section class="collapse container py-5" id="addNewItem">
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <form class="d-flex gap-2">
-                    <input type="text" class="form-control" placeholder="Ingresa una nueva tarea:">
-                    <button type="submit" class="btn btn-primary">Agregar</button>
+            <div class="col-md-8">
+                <form class="row g-3" enctype="multipart/form-data">
+                    <div class="col-md-6">
+                        <label class="form-label">Sube una imagen</label>
+                        <input type="file" class="form-control" accept="image/*">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Título</label>
+                        <input type="text" class="form-control" placeholder="Título de la tarjeta">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Descripción</label>
+                        <textarea class="form-control" rows="3" placeholder="Texto descriptivo"></textarea>
+                    </div>
+                    <div class="col-md-9">
+                        <label class="form-label">Enlace</label>
+                        <input type="text" class="form-control" placeholder="Enlace relacionado">
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-primary w-100">Agregar tarjeta</button>
+                    </div>
                 </form>
             </div>
         </div>
