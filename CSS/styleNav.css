@@ -1,8 +1,12 @@
-
-
 .linea-divisoria {
     height: 3px;
     background-color: #000;
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+
+#addNewItem{
+    border: none;
+}
+
